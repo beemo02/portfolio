@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    
+}
+nav {
+    height: 500px;
+    width: 100%;
+    background-color: #1f2937;
+    padding-top: 30px;
+}
+
+#navContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+#linkContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+#brandLogo, .navLink {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#contentContainer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+
+#mainContent {
+    font-size: 48px;
+    color: #f9faf8;
+    
+}
+
+.contentInformation {
+    width: 500px;
+    
+}
+
+.contentInput {
+    color: white;
+}
+
+#buttonContainer {
+    padding-top: 10px;
+}
+
+.contentButton {
+    color: #f9faf8;
+    background-color: rgb(22, 94, 201);
+    border-radius: 10px;
+    font-size: medium;
+    display: inline-block;
+    padding: 10px;
+    border: none;
+}
+
+#imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#mainContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
+}
+
+#infoContainer {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 30px 50px 70px;
+
+}
+
+.contentImg {
+    border: 1px solid;
+    border-color: rgb(0, 144, 240);
+    border-radius: 10px;
+}
+
+.pContainer {
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+}
+
+#articleContainer {
+    background-color: rgb(148, 148, 148);
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+
+#articleBox {
+    height: 200px;
+    width: 700px;
+}
+
+article {
+    font-size: larger;
+}
+
+#authorBox {
+    margin-left: 500px;
+    padding-top: 10px;
+}
+
+#contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+#lastContainer {
+    background-color: rgb(39, 113, 209);
+    width: 800px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    padding-top: 10px;
+}
+
+#signContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signInbutton {
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(118, 168, 233);
+}
+
+.userAction, #signInbutton {
+    color: #f9faf8;
+}
+
+footer {
+    height: 75px;
+    background-color: #1f2937 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pfooter {
+    color: #f9faf8;
+}
+
+
+
+
+
+
+
+
+
+
+
