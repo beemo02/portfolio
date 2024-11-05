@@ -36,7 +36,7 @@
                     <ul class="list-unstyled">
                         <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
                         <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
-                        <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
+                        <li><a class="btn btn-success text-white mt-2" onclick="addToCart({{$product->id}})"><i class="fas fa-cart-plus"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -65,9 +65,54 @@
     @endforeach
 </div>
 
-    
+
 
 
 @endsection
+
+@endsection
+
+@section('scripts')
+<script> 
+
+
+    var addCart = "{{ route('cart.add') }}";
+    var cartCount = "{{ route('cart.count') }}";
+
+    function addToCart(productId){
+    $.ajax({
+        url: addCart,
+        method: 'POST',
+        data: {
+            _token: "{{ csrf_token() }}",
+            'product_id' : productId,
+            'quantity' : 1
+        },
+
+        success : function(response){
+            if(response.success){
+                updateCartCount();
+            }
+        }
+    })
+}
+
+function updateCartCount() {
+    $.ajax({
+        url: cartCount,
+        method: 'GET',
+        success: function(response) {
+            $('#cart-count').text(response.count);
+        }
+    });
+}
+
+$(document).ready(function() {
+    updateCartCount();
+});
+
+</script>
+
+
 
 @endsection

@@ -17,6 +17,7 @@ use App\Http\Controllers\MasterCategoryController;
 use App\Http\Controllers\MasterSubcategoryController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -140,10 +141,14 @@ Route::middleware(['auth', 'verified', 'rolemanager:customer'])->group(function 
         Route::controller(CartController::class)->group(function () {
             Route::get('/shop', 'index')->name('shop');
             Route::get('/force-logout', 'forceLogout')->name('force.logout');
-            // web.php
             Route::get('/product/{subcategory}', 'products_subcategory')->name('product.productperCategory');
+            Route::post('/cart/add',  'add')->name('cart.add');
+            Route::get('/cart/count', 'count')->name('cart.count');
+            Route::get('cart/index', 'view')->name('cart.view');
+        });
 
-
+        Route::controller(OrderController::class)->group(function () {
+            Route::post('/checkout',  'process')->name('checkout.process');
         });
     
     });
